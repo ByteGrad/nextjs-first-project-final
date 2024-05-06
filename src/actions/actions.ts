@@ -3,7 +3,7 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 
-export async function createPost(formData: unknown) {
+export async function createPost(formData: FormData) {
   // authentication
   const { isAuthenticated } = await getKindeServerSession();
   if (!(await isAuthenticated())) {
